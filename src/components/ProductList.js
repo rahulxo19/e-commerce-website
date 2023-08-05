@@ -1,5 +1,6 @@
 import React from "react";
 import Product from "./Product";
+import { Col, Container, Row } from "react-bootstrap";
 
 const productsArr = [
   {
@@ -38,12 +39,21 @@ const productsArr = [
 const ProductList = () => {
   return (
     <>
-      <ul>
+      <Container>
         <h1>Products</h1>
-        {productsArr.map((product, index) => (
-          <Product product={product} key={index} />
-        ))}
-      </ul>
+        <Row>
+          {productsArr.map((product, index) => (
+            <Col
+              className="d-flex justify-content-center mt-5"
+              lg="6"
+              md="6"
+              sm="12"
+            >
+              <Product product={product} key={index} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </>
   );
 };
