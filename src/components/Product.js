@@ -1,17 +1,15 @@
 import React from "react";
+import { Card } from "react-bootstrap";
 
 const Product = (props) => {
-  console.log(props);
   return (
-    <>
-      <li>
-        <div>
-          <h3>{props.product.title}</h3>
-          <span>{props.product.price}</span>
-        </div>
-        <img src={props.product.imageUrl} alt="cant connect" />
-      </li>
-    </>
+    <Card className="card-flex card-group" style={{ width: 300 }}>
+      <Card.Img variant="top" src={props.product.imageUrl} alt="cant connect" />
+      <Card.Body>
+        <Card.Title>{props.product.title}</Card.Title>
+        <Card.Text>Price: ${props.product.price}</Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
 
