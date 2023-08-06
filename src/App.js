@@ -1,11 +1,14 @@
-import NavBar from "./components/NavBar";
+import CartProvider from "./Store/CartProvider";
+import NavBar from "./components/NavigationBar";
 import ProductList from "./components/ProductList";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <ProductList />
+      <CartProvider>
+        <NavBar />
+        <ProductList />
+      </CartProvider>
     </>
   );
 }
