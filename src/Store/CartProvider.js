@@ -17,8 +17,8 @@ const cartReducer = (state, action) => {
 
     if (itemIndex !== -1) {
       updatedItems = [...state.items];
-      const updateItem = state.items[itemIndex];
-      updateItem.quantity += 1;
+      const updateItem = { ...updatedItems[itemIndex] };
+      updateItem.quantity++;
       updatedItems[itemIndex] = updateItem;
     } else {
       const updateItem = {
@@ -36,10 +36,10 @@ const cartReducer = (state, action) => {
   if (action.type === "REMOVE") {
     const updatedTotalAmount = state.totalAmount + Number(action.price);
     const itemIndex = state.Items.findIndex(
-      (item) => item.title === action.itemName
+      (item) => item.title === action.title
     );
 
-    const item = state.Items[itemIndex];
+    const item = state.items[itemIndex];
     let updatedItems;
 
     if (item) {
@@ -54,7 +54,7 @@ const cartReducer = (state, action) => {
       updatedItems.splice(itemIndex, 1);
     }
     return {
-      Items: updatedItems,
+      items: updatedItems,
       totalAmount: updatedTotalAmount,
     };
   }
@@ -77,8 +77,6 @@ function CartProvider(props) {
     addItem: addItemHandler,
     removeItem: removeItemHandler,
   };
-
-  console.log(cartState);
 
   return (
     <CartContext.Provider value={cartContext}>

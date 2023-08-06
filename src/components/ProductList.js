@@ -48,8 +48,9 @@ const ProductList = () => {
               lg="6"
               md="6"
               sm="12"
+              key={product.title}
             >
-              <Product product={product} key={index} />
+              <Product product={product} />
             </Col>
           ))}
         </Row>

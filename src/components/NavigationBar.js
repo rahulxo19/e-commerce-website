@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap";
 import SideNav from "./SideNav";
 import CartContext from "../Store/Cart-Context";
+import { NavLink, Outlet } from "react-router-dom";
 
 const NavigationBar = (props) => {
   const [show, setShow] = useState(false);
@@ -18,27 +19,35 @@ const NavigationBar = (props) => {
   const handleShow = () => setShow(true);
 
   return (
-    <Navbar className="navbar navbar-dark bg-dark ">
-      <Container>
-        <NavbarBrand href="#">E-Commerce</NavbarBrand>
-        <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-        </Nav>
-        <Nav className="ml-auto">
-          <Nav.Link href="#" className="nav-link">
-            <InputGroup>
-              <div className="input-group-text text-primary">
-                {cartCtx.items.length}
-              </div>
-              <Button variant="primary" onClick={handleShow}>
-                Cart
-              </Button>
-              <SideNav show={show} handleClose={handleClose} />
-            </InputGroup>
-          </Nav.Link>
-        </Nav>
-      </Container>
-    </Navbar>
+    <>
+      <Navbar className="navbar navbar-dark bg-dark ">
+        <Container>
+          <NavbarBrand href="/">E-Commerce</NavbarBrand>
+          <Nav className="me-auto">
+            <NavLink to="/" className="nav-link">
+              Home
+            </NavLink>
+            <NavLink to="/about" className="nav-link">
+              about
+            </NavLink>
+          </Nav>
+          <Nav className="ml-auto">
+            <Nav.Link to="/cart" className="nav-link">
+              <InputGroup>
+                <div className="input-group-text text-primary">
+                  {cartCtx.items.length}
+                </div>
+                <Button variant="primary" onClick={handleShow}>
+                  Cart
+                </Button>
+                <SideNav show={show} handleClose={handleClose} />
+              </InputGroup>
+            </Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+      <Outlet />
+    </>
   );
 };
 
