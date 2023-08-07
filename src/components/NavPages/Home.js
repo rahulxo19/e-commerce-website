@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 
-import MoviesList from "./movies/MovieList";
-import AddMovie from "./movies/AddMovie";
+import MoviesList from "../movies/MovieList";
+import AddMovie from "../movies/AddMovie";
 import "./Home.css";
 
 function Home() {

@@ -28,7 +28,10 @@ const NavigationBar = (props) => {
               Home
             </NavLink>
             <NavLink to="/about" className="nav-link">
-              about
+              About
+            </NavLink>
+            <NavLink to="/contactus" className="nav-link">
+              Contact Us
             </NavLink>
           </Nav>
           <Nav className="ml-auto">
