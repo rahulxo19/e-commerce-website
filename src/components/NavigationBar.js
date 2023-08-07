@@ -24,7 +24,7 @@ const NavigationBar = (props) => {
         <Container>
           <NavbarBrand href="/">E-Commerce</NavbarBrand>
           <Nav className="me-auto">
-            <NavLink to="/" className="nav-link">
+            <NavLink to="/home" className="nav-link">
               Home
             </NavLink>
             <NavLink to="/about" className="nav-link">
