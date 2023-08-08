@@ -33,6 +33,9 @@ const NavigationBar = (props) => {
             <NavLink to="/contactus" className="nav-link">
               Contact Us
             </NavLink>
+            <NavLink to="/login" className="nav-link">
+              Login
+            </NavLink>
           </Nav>
           <Nav className="ml-auto">
             <Nav.Link to="/cart" className="nav-link">

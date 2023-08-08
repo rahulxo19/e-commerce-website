@@ -8,6 +8,7 @@ import ProductList from "./components/ProductList";
 import Home from "./components/NavPages/Home";
 import ContactUs from "./components/NavPages/ContactUs";
 import ProductDetail from "./components/ProductDetail";
+import AuthForm from "./components/Auth/AuthForm";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: "/home", element: <Home /> },
       { path: "/contactus", element: <ContactUs /> },
       { path: "/products/:productTitle", element: <ProductDetail /> },
+      { path: "/login", element: <AuthForm /> },
     ],
   },
 ]);
